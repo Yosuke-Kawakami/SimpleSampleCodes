@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity
 
         switch(index)
         {
-            case  2: ft.add(R.id.container, new Fragment_a(), "a"); break;
-            case  1: ft.add(R.id.container, new Fragment_c(), "c"); break;
+            case  2: ft.replace(R.id.container, new Fragment_a(), "a"); break;
+            case  1: ft.replace(R.id.container, new Fragment_c(), "c"); break;
             case  0:
-            default: ft.add(R.id.container, new Fragment_b(), "b"); break;
+            default: ft.replace(R.id.container, new Fragment_b(), "b"); break;
         }
 
         ft.commit();
