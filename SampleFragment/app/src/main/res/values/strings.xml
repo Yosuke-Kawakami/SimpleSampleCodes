@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Sample Fragment</string>
+    <string name="output">Tap to CHANGE</string>
+</resources>
