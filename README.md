@@ -1,5 +1,3 @@
-# 早見
-
-## Android
-* SampleFragment  : フラグメントマネージャーを通じてフラグメントを再配置するだけ
-* SampleAsyncTask : AsyncTask を用いて非同期処理を行う。HttpUrlConnection を実行
+# Android
+* [SampleFragment](tree/master/SampleFragment)  : フラグメントマネージャーを通じてフラグメントを再配置するだけ
+* [SampleAsyncTask](tree/master/SampleAsyncTask) : AsyncTask を用いて非同期処理を行う。HttpUrlConnection を実行
