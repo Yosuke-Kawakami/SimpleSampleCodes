@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoadFinished(Loader<String> loader, String s)
     {
+        mMyAsyncTaskLoader.setIsRunning(false);
         TextView tv = (TextView)findViewById(R.id.tv);
         tv.setText(s);
     }
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoaderReset(Loader<String> loader)
     {
+        mMyAsyncTaskLoader.setIsRunning(false);
         TextView tv = (TextView)findViewById(R.id.tv);
         tv.setText("リセットしました");
     }
