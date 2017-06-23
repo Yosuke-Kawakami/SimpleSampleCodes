@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sample ListFragment</string>
+    <string name="clear_list">Clear List</string>
+    <string name="empty_text">No items</string>
+</resources>

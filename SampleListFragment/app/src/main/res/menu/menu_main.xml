@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="simple_sample_codes.yosuke.kawakami.github.com.samplelistfragment.MainActivity">
+    <item
+        android:id="@+id/menu_clear_list"
+        android:orderInCategory="100"
+        android:title="@string/clear_list"
+        app:showAsAction="never" />
+</menu>
