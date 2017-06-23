@@ -13,19 +13,38 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String>
+public class MainActivity extends AppCompatActivity
 {
-    MyAsyncTaskLoader mMyAsyncTaskLoader;
+    MainFragment mMainFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getLoaderManager().initLoader(0, savedInstanceState, this);  //(id, Bundle, Callback)
+
+        // 画面回転時はアクティビティが再生成されて onCreate() が実行される.
+        // mFragment は未定義だが、タグを設定しておけば回転前のフラグメント回収できる場合がある.
+        // 安易に初期化してはいけない.
+
+        boolean hasFragment = (getFragmentManager().findFragmentByTag("TAG") != null);
+        if(hasFragment)
+        {
+            mMainFragment = (MainFragment) getFragmentManager().findFragmentByTag("TAG");
+        }
+        else
+        {
+            getFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragment, mMainFragment = new MainFragment(), "TAG")
+                .commit();
+        }
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener()
@@ -33,41 +52,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             @Override
             public void onClick(View view)
             {
-                if(mMyAsyncTaskLoader != null && !mMyAsyncTaskLoader.getIsRunning())
+                if(mMainFragment != null && !mMainFragment.getIsRunning())
                 {
-                    mMyAsyncTaskLoader.forceLoad();
+                    mMainFragment.forceLoad();
                 }
             }
         });
-    }
-
-    @Override
-    public Loader<String> onCreateLoader(int i, Bundle bundle)
-    {
-        Uri.Builder b = new Uri.Builder();
-        b.scheme("https");
-        b.authority("www.googleapis.com");
-        b.path("books/v1/volumes");
-        b.appendQueryParameter("q", "android");
-
-        return mMyAsyncTaskLoader = new MyAsyncTaskLoader(this, b);
-    }
-
-
-    @Override
-    public void onLoadFinished(Loader<String> loader, String s)
-    {
-        mMyAsyncTaskLoader.setIsRunning(false);
-        TextView tv = (TextView)findViewById(R.id.tv);
-        tv.setText(s);
-    }
-
-
-    @Override
-    public void onLoaderReset(Loader<String> loader)
-    {
-        mMyAsyncTaskLoader.setIsRunning(false);
-        TextView tv = (TextView)findViewById(R.id.tv);
-        tv.setText("リセットしました");
     }
 }
