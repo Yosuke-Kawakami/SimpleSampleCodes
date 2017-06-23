@@ -10,5 +10,6 @@ Android、ListFragment サンプル
 
 # 関連：
 * Fragment
-* AsyncTaskLoader
 * ListView
+* AsyncTaskLoader
+* HttpUrlConnection
