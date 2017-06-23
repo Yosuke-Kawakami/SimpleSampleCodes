@@ -26,7 +26,7 @@ public class Chores
      * @param builder
      * @return
      */
-    public static String doHttpUrlClient(Uri.Builder builder)
+    public static String doHttpGet(Uri.Builder builder)
     {
         StringBuilder     response = new StringBuilder();
         HttpURLConnection huc      = null;

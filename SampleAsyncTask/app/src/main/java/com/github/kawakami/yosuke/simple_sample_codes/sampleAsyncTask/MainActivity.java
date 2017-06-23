@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity
                     @Override
                     protected String doInBackground(Uri.Builder... builders)
                     {
-                        return Chores.doHttpUrlClient(builders[0]);
+                        return Chores.doHttpGet(builders[0]);
                     }
 
                     @Override

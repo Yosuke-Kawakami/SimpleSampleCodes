@@ -26,7 +26,7 @@ public class MyAsyncTaskLoader extends AsyncTaskLoader
     public String loadInBackground()
     {
         setIsRunning(true);
-        return Chores.doHttpUrlClient(mBuilder);
+        return Chores.doHttpGet(mBuilder);
     }
 
 
