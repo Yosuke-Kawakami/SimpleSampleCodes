@@ -1,4 +1,4 @@
- package com.github.kawakami.yosuke.simple_sample_codes.sampledialogfragment;
+package com.github.kawakami.yosuke.simple_sample_codes.sampledialogfragment;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -36,13 +36,12 @@ public class MyDialogFragment extends DialogFragment
             .setTitle(title)
             .setView(v)
             .setPositiveButton(
-                android.R.string.ok, new DialogInterface.OnClickListener()
+                android.R.string.ok,
+                new DialogInterface.OnClickListener()
                 {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i)
                     {
-                        System.out.println("CLICKED");
-
                         try {
                             int reqCode = 999;
                             Intent data = new Intent();
