@@ -5,4 +5,8 @@ Android、Volley サンプル
 
 * [com.android.volley:volley:1.0.0](https://github.com/google/volley) を利用する
 
-それだけ
+　
+　
+
+# 関連
+* HttpUrlConnection
