@@ -14,4 +14,5 @@
 | [basic](../../tree/master/angular-js-1.x/basic.html) | 最も基本的な動作。変数を動的に表示するだけ |
 | [basic_ng-click](../../tree/master/angular-js-1.x/basic_ng-click.html) | ng-click |
 | [basic_ng-repeat](../../tree/master/angular-js-1.x/basic_ng-repeat.html) | ng-repeat |
+| [controller-multi](../../tree/master/angular-js-1.x/controller-multi.html) | コントローラを複数設置する |
 

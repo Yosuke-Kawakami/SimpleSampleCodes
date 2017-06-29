@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Controller Multi</title>
+  <script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
+</head>
+<body ng-app="phase1">
+  <h1>Controller Multi</h1>
+
+  <section ng-controller="p1cntrlr as p1">
+    <input type="text" ng-model="p1.text" placeholder="type here">
+    <button ng-click="p1.hoge(p1.text)">BUTTON</button>
+    <button ng-click="p1.clear()">CLEAR</button>
+    <li ng-repeat="row in p1.member">{{row}}</li>
+  </section>
+
+  <section ng-controller="p2cntrlr">
+    <input type="text" ng-model="text" placeholder="type here">
+    <button ng-click="hoge(text)">BUTTON</button>
+    <button ng-click="clear()">CLEAR</button>
+    <li ng-repeat="row in member">{{row}}</li>
+  </section>
+</body>
+
+<script>
+  angular
+  .module("phase1", [])
+  .controller("p1cntrlr", function(){
+      this.text   = "";
+      this.member = [];
+      this.hoge   = function (arg)
+      {
+          this.member.push( arg );
+          this.text = "";
+      };
+      this.clear  = function()
+      {
+          this.member = [];
+          this.text   = "";
+      };
+  })
+  .controller("p2cntrlr", function($scope){
+      $scope.text  = "";
+      $scope.member = [];
+      $scope.hoge   = function (arg)
+      {
+          $scope.member.push( arg );
+          $scope.text = "";
+      };
+      $scope.clear  = function()
+      {
+          $scope.member = [];
+          $scope.text  = "";
+      };
+  });
+</script>
+</html>
