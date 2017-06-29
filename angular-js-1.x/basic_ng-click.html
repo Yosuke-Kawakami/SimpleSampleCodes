@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BASIC ng-click</title>
+<script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
+</head>
+<body>
+  <h1>BASIC ng-click</h1>
+
+  <section ng-app="phase1">
+    <div ng-controller="p1cntrlr as p1">
+      <button ng-click="p1.hoge()">BUTTON</button>
+      <button ng-click="p1.fuga()">CLEAR</button>
+      <p>{{p1.text1}}</p>
+    </div>
+  </section>
+
+  <script>
+    angular
+    .module("phase1", [])
+    .controller("p1cntrlr", function(){
+        this.text1 = "";
+        this.hoge  = function(){ this.text1 += "PUSHED-001 ";};
+        this.fuga  = function(){ this.text1 = "";};
+    });
+  </script>
+</body>
+</html>

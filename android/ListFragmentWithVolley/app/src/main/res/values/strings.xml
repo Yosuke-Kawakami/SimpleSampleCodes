@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ListFragmentWithVolley</string>
+    <string name="empty_text">No item.</string>
+    <string name="clear_list">clear list</string>
+</resources>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BASIC ng-repeat</title>
+<script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
+</head>
+<body>
+  <h1>BASIC ng-repeat</h1>
+
+  <section ng-app="phase1">
+    <div ng-controller="p1cntrlr as p1">
+      <input type="text" ng-model="p1.text1" placeholder="type here">
+      <button ng-click="p1.hoge()">ADD LIST</button>
+      <li ng-repeat="row in p1.member">{{row}}</li>
+    </div>
+  </section>
+
+  <script>
+    angular
+    .module("phase1", [])
+    .controller("p1cntrlr", function(){
+        this.text1  = "";
+        this.member = [];
+        this.hoge   = function ()
+        {
+            this.member.push( this.text1 );
+            this.text1 = "";
+        };
+    });
+  </script>
+</body>
+</html>

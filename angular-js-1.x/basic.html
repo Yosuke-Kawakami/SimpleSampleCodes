@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BASIC</title>
+<script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
+</head>
+<body>
+  <h1>BASIC</h1>
+
+  <section ng-app="phase1">
+    <div ng-controller="p1cntrlr">
+      <input type="text" ng-model="text1" placeholder="input">
+      <p>{{text1}}</p>
+    </div>
+  </section>
+
+</body>
+  <script>
+    var app = angular
+    .module("phase1", [])
+    .controller("p1cntrlr", function($scope){
+        $scope.text1 ="";
+    });
+  </script>
+</html>
