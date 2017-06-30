@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTTP GET</title>
+<script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
+</head>
+<body ng-app="phase1">
+  <h1>HTTP GET</h1>
+  <section ng-controller="p1Cntrlr">
+    <input type="text" name="val" ng-model="baa" placeholder="parameter-value">
+    <button ng-click="onClick()">送信</button>
+    <p>{{result}}</p>
+  </section>
+</body>
+<script>
+  angular
+  .module("phase1", [])
+  .controller("p1Cntrlr", function($scope, $http){
+      $scope.baa    = "";
+      $scope.result = "";
+      $scope.onClick = function(){
+          $http({
+              method:"GET",
+              url   :"https://github.com/",  // XHR オブジェクトなので同一ドメインに送信しないとだめ.
+              params:{ foo : $scope.baa }
+          })
+      /*
+      //  ショートカットメソッドで書くとこうなる.
+          $http.get(
+              "https://github.com/",
+              { params : { foo : $scope.baa }}
+          )
+      */
+          .success(function(data, status, headers, config){
+              $scope.result = data;
+          })
+          .error(function(data, status, headers, config){
+              $scope.result = data;
+          });
+      }
+  });
+</script>
+</html>

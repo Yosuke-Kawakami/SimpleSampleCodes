@@ -17,4 +17,5 @@
 | [basic_ng-show](../../tree/master/angular-js-1.x/basic_ng-show.html) | ng-show |
 | [basic_watch](../../tree/master/angular-js-1.x/basic_watch.html) | $scope.$watch |
 | [controller-multi](../../tree/master/angular-js-1.x/controller-multi.html) | コントローラを複数設置する |
+| [request_http-get](../../tree/master/angular-js-1.x/request_http-get.html) | HTTP GET |
 
