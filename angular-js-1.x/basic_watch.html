@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BASIC $watch</title>
+<script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
+</head>
+<body ng-app="phase1">
+  <h1>BASIC $watch</h1>
+  <section ng-controller="p1cntrlr">
+    値１：<input type="number" ng-model="a" placeholder="Number">
+    値２：<input type="number" ng-model="b" placeholder="Number">
+    <p><b>sum : {{sum}}</b></p>
+  </section>
+</body>
+<script>
+  angular
+  .module("phase1",[])
+  .controller("p1cntrlr", function($scope){
+      $scope.a = 0;
+      $scope.b = 0;
+      $scope.sum = $scope.a + $scope.b;
+
+      $scope.$watch(
+          function(){ return $scope.a + $scope.b;       }, // 監視する項目
+          function(){ $scope.sum = $scope.a + $scope.b; }, // イベント発生時の処理
+          false
+      );
+  /*
+  // 単項目の監視であればこういう書き方も可能.
+      $scope.$watch(
+          "a", // "$scope.a" でない点に注目
+          function(){ console.log("has changed.") },
+          false
+      );
+  */
+  });
+</script>
+</html>
