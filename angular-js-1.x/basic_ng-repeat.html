@@ -11,7 +11,7 @@
     <div ng-controller="p1cntrlr as p1">
       <input type="text" ng-model="p1.text1" placeholder="type here">
       <button ng-click="p1.hoge()">ADD LIST</button>
-      <li ng-repeat="row in p1.member">{{row}}</li>
+      <li ng-repeat="row in p1.member">{{$index}} - {{row}}</li>
     </div>
   </section>
 
