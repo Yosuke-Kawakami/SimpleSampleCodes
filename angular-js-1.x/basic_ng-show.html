@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BASIC ng-show</title>
+<script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
+</head>
+<body>
+  <h1>BASIC ng-show</h1>
+
+  <section ng-app="phase1">
+    <div ng-controller="p1cntrlr as p1">
+      <p><input type="checkbox" ng-model="p1.isHidden">”ñ•\Ž¦‚É‚µ‚Ü‚·</p>
+      <p ng-show="!p1.isHidden">‚¢‚ë‚Í‚É‚Ù‚Ö‚Æ ‚¿‚è‚Ê‚é‚ð ‚í‚©‚æ‚½‚ê‚» ‚Â‚Ë‚È‚ç‚Þ ‚¤‚î‚Ì‚¨‚­‚â‚Ü ‚¯‚Ó‚±‚¦‚Ä ‚ ‚³‚«‚ä‚ß‚Ý‚µ ‚ï‚Ð‚à‚¹‚·‚ñ</p>
+    </div>
+  </section>
+</body>
+  <script>
+    angular
+    .module("phase1", [])
+    .controller("p1cntrlr", function(){
+        this.isHidden = false;
+    });
+  </script>
+</html>
